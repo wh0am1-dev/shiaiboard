@@ -1,11 +1,18 @@
 // 🚂🚋🚋 choo 🚋🚋🚋
-const choo = require('choo')
-const app = choo()
+const app = require('choo')()
 
 // ==== styles ====
 const css = require('sheetify')
 css('tachyons')
 css('./styles.css')
+
+// ==== persist ====
+const xtend = require('xtend')
+if (process.env.NODE_ENV === 'production') {
+  app.use(require('choo-persist')({
+    filter: state => xtend(state)
+  }))
+}
 
 // ==== development stuff ====
 if (process.env.NODE_ENV !== 'production') {

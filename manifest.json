@@ -7,8 +7,8 @@
   "background_color": "#111",
   "theme_color": "#111",
   "icons": [{
-    "src": "/assets/img/shiai.svg",
-    "type": "image/svg+xml",
-    "sizes": "192x192 512x512"
+    "src": "/assets/img/shiai.png",
+    "type": "image/png",
+    "sizes": "512x512"
   }]
 }

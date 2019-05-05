@@ -3,17 +3,17 @@
 const html = require('choo/html')
 
 const mods = {
-  nil: 'near-white hover-near-black hover-bg-near-white',
-  blu: 'blue hover-near-black hover-bg-blue',
-  grn: 'green hover-near-black hover-bg-green',
-  ylw: 'yellow hover-near-black hover-bg-yellow',
-  red: 'red hover-near-black hover-bg-red',
-  ppl: 'light-purple hover-near-black hover-bg-light-purple',
-  pnk: 'pink hover-near-black hover-bg-pink',
-  lblu: 'light-blue hover-near-black hover-bg-light-blue',
-  lgrn: 'light-green hover-near-black hover-bg-light-green',
-  lylw: 'light-yellow hover-near-black hover-bg-light-yellow',
-  lred: 'light-red hover-near-black hover-bg-light-red'
+  nil: 'b--near-white hover-bg-near-white',
+  blu: 'b--blue hover-bg-blue',
+  grn: 'b--green hover-bg-green',
+  ylw: 'b--yellow hover-bg-yellow',
+  red: 'b--red hover-bg-red',
+  ppl: 'b--light-purple hover-bg-light-purple',
+  pnk: 'b--pink hover-bg-pink',
+  lblu: 'b--light-blue hover-bg-light-blue',
+  lgrn: 'b--light-green hover-bg-light-green',
+  lylw: 'b--light-yellow hover-bg-light-yellow',
+  lred: 'b--light-red hover-bg-light-red'
 }
 
 module.exports = (props = {}) => {
@@ -25,7 +25,8 @@ module.exports = (props = {}) => {
   }
 
   return html`
-    <span onclick=${onclick} class="${props.mod} bg-animate pa1 br2 pointer ${props.class}">
+    <span onclick=${onclick}
+      class="${props.mod} bg-animate pa1 ba br2 pointer ${props.class}">
       ${props.text}
     </span>
   `

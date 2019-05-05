@@ -8,8 +8,7 @@ module.exports = (state, emitter) => {
   state.events.players.SUB = 'players:sub'
   state.events.players.RESET = 'players:reset'
 
-  state.players = {}
-  reset()
+  if (!state.players) reset()
 
   emitter.on(state.events.players.ADD, (name, type) => {
     state.players[name][type] += 1
@@ -26,6 +25,7 @@ module.exports = (state, emitter) => {
   emitter.on(state.events.players.RESET, reset)
 
   function reset () {
+    state.players = {}
     state.players.aka = player('aka', 'red')
     state.players.shiro = player('shiro', 'nil')
     emitter.emit(state.events.RENDER)

@@ -35,7 +35,7 @@ module.exports = (state, emit, props = {}) => {
         <div class="w-100 flex justify-between">
           <span class="${props.mod} tl pv1 ph2">${props.title}</span>
           <span onclick=${close}
-            class="tc red hover-near-black hover-bg-red bg-animate br2 pv1 ph3 pointer">x</span>
+            class="tc red hover-near-white hover-bg-red bg-animate br2 pv1 ph3 pointer">x</span>
         </div>
 
         <div class="ma2">${props.content}</div>

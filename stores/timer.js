@@ -8,53 +8,49 @@ module.exports = (state, emitter) => {
   state.events.timer.RESET = 'timer:reset'
   state.events.timer.TYPE = 'timer:type'
 
-  state.time = {}
+  state.time = state.time || {}
   state.time.types = {}
   state.time.types.tanto = 90000
   state.time.types.toshu = 180000
   state.time.types.free = 120000
-  state.time.type = 'tanto'
-  state.time.clk = 0
-  state.time.on = false
+  state.time.type = state.time.type || 'tanto'
+  state.time.offset = state.time.offset || null
+  state.time.clk = state.time.clk || 0
+  state.time.on = state.time.on || false
   state.time.m = () => Math.floor(state.time.clk / 60000).toString().padStart(2, '0')
   state.time.s = () => Math.floor(state.time.clk % 60000 / 1000).toString().padStart(2, '0')
   state.time.cs = () => Math.floor(state.time.clk % 100).toString().padStart(2, '0')
   state.time.ms = () => Math.floor(state.time.clk % 1000).toString().padStart(3, '0')
 
-  let offset = null
   let interval = null
+  if (!state.time.on) state.time.offset = null
 
   emitter.on(state.events.timer.ON, () => {
-    if (!state.time.on) {
-      offset = Date.now()
+    state.time.offset = state.time.offset || Date.now()
 
-      interval = setInterval(() => {
-        let now = Date.now()
-        state.time.clk += now - offset
-        offset = now
+    interval = setInterval(() => {
+      let now = Date.now()
+      state.time.clk += now - state.time.offset
+      state.time.offset = now
 
-        if (state.time.clk >= state.time.types[state.time.type]) {
-          state.time.clk = state.time.types[state.time.type]
-          emitter.emit(state.events.timer.OFF)
-          emitter.emit(state.events.app.SFX_HORN)
-        }
+      if (state.time.clk >= state.time.types[state.time.type]) {
+        state.time.clk = state.time.types[state.time.type]
+        emitter.emit(state.events.timer.OFF)
+        emitter.emit(state.events.app.SFX_HORN)
+      }
 
-        emitter.emit(state.events.RENDER)
-      }, 1)
+      emitter.emit(state.events.RENDER)
+    }, 1)
 
-      state.time.on = true
-    }
-
+    state.time.on = true
     emitter.emit(state.events.RENDER)
   })
 
   emitter.on(state.events.timer.OFF, () => {
-    if (state.time.on) {
-      clearInterval(interval)
-      interval = null
-      state.time.on = false
-    }
-
+    clearInterval(interval)
+    interval = null
+    state.time.on = false
+    state.time.offset = null
     emitter.emit(state.events.RENDER)
   })
 
@@ -76,4 +72,6 @@ module.exports = (state, emitter) => {
   emitter.on(state.events.timer.TYPE, type => {
     state.time.type = type
   })
+
+  if (state.time.on) emitter.emit(state.events.timer.ON)
 }

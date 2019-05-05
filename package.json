@@ -1,6 +1,6 @@
 {
   "name": "shiaiboard",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "tomiki aikido shiai scoreboard",
   "main": "index.js",
   "private": true,
@@ -29,9 +29,11 @@
   "license": "MIT",
   "dependencies": {
     "choo": "^6.13.1",
+    "choo-persist": "^3.0.2",
     "choo-service-worker": "^2.4.0",
     "sheetify": "^7.3.3",
-    "tachyons": "^4.11.1"
+    "tachyons": "^4.11.1",
+    "xtend": "^4.0.1"
   },
   "devDependencies": {
     "bankai": "^9.15.0",

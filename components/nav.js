@@ -9,13 +9,13 @@ const modal = require('../components/modal')
 
 module.exports = (state, emit) => {
   return html`
-    <header class="bg-near-black w-100 pa4 flex items-center bb b--dark-gray z-999 shadow-2">
-      <!-- <img src="/assets/img/tomiki-aikido-spain.png" class="h2 mr4 shadow-2"> -->
+    <header class="bg-near-black w-100 pv3 ph4 flex items-center bb b--dark-gray z-999 shadow-2">
 
-      <nav class="f6 fw6 tracked tc w-100">
+      <nav class="f6 fw6 tracked tc w-100 flex items-center justify-center">
         ${btn({ text: 'HELP', mod: 'red', onclick: help, class: 'mr4' })}
-        ${btn({ text: 'RESET', mod: 'red', onclick: reset, class: 'mr4' })}
-        ${btn({ text: 'ABOUT', mod: 'red', onclick: about })}
+        <img src="/assets/img/shiai.png"
+          class="h3 grow shadow-2 pointer" onclick=${about}>
+        ${btn({ text: 'RESET', mod: 'red', onclick: reset, class: 'ml4' })}
       </nav>
 
       ${helpModal()}
@@ -93,7 +93,7 @@ module.exports = (state, emit) => {
   function resetModal () {
     return modal(state, emit, {
       id: 'reset',
-      title: ' ',
+      title: 'Reset',
       content: html`
         <section class="tc w-100 mb3">
           <p class="mb4">Select category</p>

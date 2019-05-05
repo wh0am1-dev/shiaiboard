@@ -6,7 +6,6 @@ var URLS = [
   ...process.env.STYLE_LIST,
   ...process.env.SCRIPT_LIST,
   ...process.env.MANIFEST_LIST,
-  '/assets/img/shiai.grid',
   '/assets/img/itaf.png',
   '/assets/img/shiai.png',
   '/assets/img/shiai.svg',
