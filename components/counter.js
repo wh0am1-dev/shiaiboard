@@ -27,7 +27,8 @@ module.exports = (props = {}) => {
   }
 
   return html`
-    <section class="h-50 h-100-ns grow-sm ${props.class}" onclick=${onclick} oncontextmenu=${oncontextmenu}>
+    <section class="h-50 h-100-ns grow-sm pointer ${props.class}"
+      onclick=${onclick} oncontextmenu=${oncontextmenu}>
 
       <header class="flex items-center justify-center bg-${props.mod.bg} near-black h-25 br-pill mh4 mh3-m">
         <div class="f6 f3-l fw6 tracked-tight-m ttu ${props.mod.acc}">
