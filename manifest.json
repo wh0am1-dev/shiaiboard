@@ -1,0 +1,14 @@
+{
+  "name": "Shiai Board",
+  "short_name": "Shiai",
+  "description": "Tomiki Aikido shiai scoreboard",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111",
+  "theme_color": "#111",
+  "icons": [{
+    "src": "/assets/img/shiai.svg",
+    "type": "image/svg+xml",
+    "sizes": "192x192 512x512"
+  }]
+}
