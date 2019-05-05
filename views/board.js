@@ -22,10 +22,10 @@ module.exports = (state, emit) => {
           <span class="ttu f7 f5-ns fw6 br-pill bg-near-white near-black pv1 ph3">${state.time.type}</span>
         </div>
 
-        <div class="absolute top-1 right-1 top-2-l right-2-l dn db-ns tc">
-          <img src="/assets/img/itaf.png" class="h3">
-          <div>
-            <span class="ttu f7 fw6 mt3">ITAF</span>
+        <div class="absolute top-1 right-1 top-2-l right-2-l tc">
+          <img src="/assets/img/itaf.png" class="h2 h3-l">
+          <div class="dn db-ns">
+            <span class="ttu f7 fw6 tracked-tight-m mt3-l">ITAF</span>
           </div>
         </div>
 

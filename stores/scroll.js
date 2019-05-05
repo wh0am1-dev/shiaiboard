@@ -24,6 +24,6 @@ module.exports = (state, emitter) => {
   })
 
   emitter.on(state.events.scroll.HIDE_MENU, () => {
-    emitter.emit(state.events.scroll.XY, 0, 250, true)
+    emitter.emit(state.events.scroll.XY, 0, 86, true)
   })
 }

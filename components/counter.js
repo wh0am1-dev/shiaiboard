@@ -36,7 +36,7 @@ module.exports = (props = {}) => {
       </header>
 
       <main class="flex items-center justify-center h-75">
-        <span class="f3 f-subheadline-ns fw6 lh-solid-l">
+        <span class="f3 f-subheadline-ns fw6 lh-solid">
           ${props.count.toString().padStart(2, '0')}
         </span>
       </main>

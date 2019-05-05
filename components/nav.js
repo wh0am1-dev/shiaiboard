@@ -96,7 +96,7 @@ module.exports = (state, emit) => {
       title: ' ',
       content: html`
         <section class="tc w-100 mb3">
-          <p class="mb4">Select category:</p>
+          <p class="mb4">Select category</p>
           ${button({ text: 'Tanto', mod: 'red', onclick: tanto, class: 'mr4' })}
           ${button({ text: 'Toshu', mod: 'red', onclick: toshu, class: 'mr4' })}
           ${button({ text: 'Free', mod: 'red', onclick: free })}
@@ -139,7 +139,7 @@ module.exports = (state, emit) => {
           </div>
 
           <div class="w-50 fl">
-            <p>Sponsored by:</p>
+            <p>Sponsored by</p>
             <img src="/assets/img/tas.png" class="h4">
           </div>
 
