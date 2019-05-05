@@ -1,6 +1,6 @@
 // players store
 
-const points = { ipon: 4, waza: 2, yuko: 1, tanto: 1, shido: 1, shui: 2 }
+const points = { ippon: 4, waza: 2, yuko: 1, tsuki: 1, shido: 0.5, chui: 1 }
 
 module.exports = (state, emitter) => {
   state.events.players = {}
@@ -36,26 +36,26 @@ module.exports = (state, emitter) => {
       name: name || 'player',
       mod: mod || 'nil',
       points: 0,
-      ipon: 0, waza: 0, yuko: 0,
-      tanto: 0, shido: 0, shui: 0
+      ippon: 0, waza: 0, yuko: 0,
+      tsuki: 0, shido: 0, chui: 0
     }
   }
 
   function calcPoints () {
     state.players.aka.points =
-      points.ipon * state.players.aka.ipon +
+      points.ippon * state.players.aka.ippon +
       points.waza * state.players.aka.waza +
       points.yuko * state.players.aka.yuko +
-      points.tanto * state.players.aka.tanto +
+      points.tsuki * state.players.aka.tsuki +
       points.shido * state.players.shiro.shido +
-      points.shui * state.players.shiro.shui
+      points.chui * state.players.shiro.chui
 
     state.players.shiro.points =
-      points.ipon * state.players.shiro.ipon +
+      points.ippon * state.players.shiro.ippon +
       points.waza * state.players.shiro.waza +
       points.yuko * state.players.shiro.yuko +
-      points.tanto * state.players.shiro.tanto +
+      points.tsuki * state.players.shiro.tsuki +
       points.shido * state.players.aka.shido +
-      points.shui * state.players.aka.shui
+      points.chui * state.players.aka.chui
   }
 }

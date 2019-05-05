@@ -6,16 +6,11 @@ const css = require('sheetify')
 css('tachyons')
 css('./styles.css')
 
-// ==== persist ====
-const xtend = require('xtend')
+// ==== setup environment ====
 if (process.env.NODE_ENV === 'production') {
-  app.use(require('choo-persist')({
-    filter: state => xtend(state)
-  }))
-}
-
-// ==== development stuff ====
-if (process.env.NODE_ENV !== 'production') {
+  app.use(require('choo-persist')())
+  app.use(require('./plugins/migration'))
+} else {
   app.use(require('choo-service-worker/clear')())
   app.use(require('choo-devtools')())
   app.use(require('./plugins/debug'))

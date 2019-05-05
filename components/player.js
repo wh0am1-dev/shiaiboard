@@ -28,7 +28,7 @@ module.exports = (state, emit, player) => {
       </header>
 
       <main class="flex items-center justify-center h-75 t2-ns">
-        <div class="f-subheadline f-8-m f-10-l fw6 lh-solid-l">${player.points.toString().padStart(2, '0')}</div>
+        <div class="f-subheadline f-8-m f-10-l fw6 lh-solid-l">${Math.floor(player.points).toString().padStart(2, '0')}</div>
       </main>
 
     </section>
@@ -37,11 +37,11 @@ module.exports = (state, emit, player) => {
 
       <div class="h-third">
         ${counter({
-          title: 'ipon',
-          count: player.ipon,
+          title: 'ippon',
+          count: player.ippon,
           mod: player.mod,
-          onclick: () => add('ipon'),
-          oncontextmenu: () => sub('ipon'),
+          onclick: () => add('ippon'),
+          oncontextmenu: () => sub('ippon'),
           class: 'w-100 w-50-ns fl'
         })}
 
@@ -57,7 +57,7 @@ module.exports = (state, emit, player) => {
 
       <div class="h-third">
         ${counter({
-          title: 'yuko',
+          title: 'yūkō',
           count: player.yuko,
           mod: player.mod,
           onclick: () => add('yuko'),
@@ -66,18 +66,18 @@ module.exports = (state, emit, player) => {
         })}
 
         ${counter({
-          title: 'tanto tsuki',
-          count: player.tanto,
+          title: 'tsuki ari',
+          count: player.tsuki,
           mod: player.mod,
-          onclick: () => add('tanto'),
-          oncontextmenu: () => sub('tanto'),
+          onclick: () => add('tsuki'),
+          oncontextmenu: () => sub('tsuki'),
           class: 'w-100 w-50-ns fl'
         })}
       </div>
 
       <div class="h-third">
         ${counter({
-          title: 'shido',
+          title: 'shidō',
           count: player.shido,
           mod: player.mod,
           onclick: () => add('shido'),
@@ -86,11 +86,11 @@ module.exports = (state, emit, player) => {
         })}
 
         ${counter({
-          title: 'shui',
-          count: player.shui,
+          title: 'chūi',
+          count: player.chui,
           mod: player.mod,
-          onclick: () => add('shui'),
-          oncontextmenu: () => sub('shui'),
+          onclick: () => add('chui'),
+          oncontextmenu: () => sub('chui'),
           class: 'w-100 w-50-ns fl'
         })}
       </div>
