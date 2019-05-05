@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="https://raw.githubusercontent.com/neko250/shiaiboard/master/assets/img/shiai.png" width="25%">
+
 # shiai board
 
 tomiki aikido shiai scoreboard
