@@ -11,11 +11,11 @@ module.exports = (state, emit) => {
   return html`
     <header class="bg-near-black w-100 pv3 ph4 flex items-center bb b--dark-gray z-999 shadow-2">
 
-      <nav class="f6 fw6 tracked tc w-100 flex items-center justify-center">
-        ${btn({ text: 'HELP', mod: 'red', onclick: help, class: 'mr4' })}
-        <img src="/assets/img/shiai.png"
-          class="h3 grow shadow-2 pointer" onclick=${about}>
-        ${btn({ text: 'RESET', mod: 'red', onclick: reset, class: 'ml4' })}
+      <nav class="f6 fw6 tracked w-100 flex items-center justify-between justify-center-ns">
+        ${btn({ text: 'HELP', mod: 'red', onclick: help, class: 'mr4 w3 tc' })}
+        <img src="/assets/img/shiai.svg"
+          class="h3 grow-sm shadow-2 pointer br-100" onclick=${about}>
+        ${btn({ text: 'RESET', mod: 'red', onclick: reset, class: 'ml4 w3 tc' })}
       </nav>
 
       ${helpModal()}
@@ -42,13 +42,13 @@ module.exports = (state, emit) => {
   function helpModal () {
     return modal(state, emit, {
       id: 'help',
-      title: 'Help',
+      title: 'HELP',
       content: html`
         <div class="overflow-auto">
           <table class="f6 w-100 center" cellspacing="0">
             <tbody class="lh-copy">
               <tr>
-                <td class="pr3 pv1 tr">Toggle timer</td>
+                <td class="pr3 pv1 tr fw6 ttu">Toggle timer</td>
                 <td class="pr3 pv1">
                   <ul class="mv1 pl3">
                     <li>touch</li>
@@ -57,7 +57,7 @@ module.exports = (state, emit) => {
                 </td>
               </tr>
               <tr>
-                <td class="pr3 pv1 tr">Reset timer</td>
+                <td class="pr3 pv1 tr fw6 ttu">Reset timer</td>
                 <td class="pr3 pv1">
                   <ul class="mv1 pl3">
                     <li>long touch</li>
@@ -66,7 +66,7 @@ module.exports = (state, emit) => {
                 </td>
               </tr>
               <tr>
-                <td class="pr3 pv1 tr">Add point</td>
+                <td class="pr3 pv1 tr fw6 ttu">Add point</td>
                 <td class="pr3 pv1">
                   <ul class="mv1 pl3">
                     <li>touch</li>
@@ -75,7 +75,7 @@ module.exports = (state, emit) => {
                 </td>
               </tr>
               <tr>
-                <td class="pr3 pv1 tr">Remove point</td>
+                <td class="pr3 pv1 tr fw6 ttu">Remove point</td>
                 <td class="pr3 pv1">
                   <ul class="mv1 pl3">
                     <li>long touch</li>
@@ -93,13 +93,15 @@ module.exports = (state, emit) => {
   function resetModal () {
     return modal(state, emit, {
       id: 'reset',
-      title: 'Reset',
+      title: 'RESET',
       content: html`
         <section class="tc w-100 mb3">
-          <p class="mb4">Select category</p>
-          ${button({ text: 'Tanto', mod: 'red', onclick: tanto, class: 'mr4' })}
-          ${button({ text: 'Toshu', mod: 'red', onclick: toshu, class: 'mr4' })}
-          ${button({ text: 'Free', mod: 'red', onclick: free })}
+          <p>Select category</p>
+          <div class="flex flex-wrap items-center justify-around">
+            ${button({ text: 'TANTO', mod: 'red', onclick: tanto, class: 'mt4 mh2 w-100 w4-ns' })}
+            ${button({ text: 'TOSHU', mod: 'red', onclick: toshu, class: 'mt4 mh2 w-100 w4-ns' })}
+            ${button({ text: 'FREE', mod: 'red', onclick: free, class: 'mt4 mh2 w-100 w4-ns' })}
+          </div>
         </section>
       `
     })
@@ -129,7 +131,7 @@ module.exports = (state, emit) => {
   function aboutModal () {
     return modal(state, emit, {
       id: 'about',
-      title: 'About',
+      title: 'ABOUT',
       content: html`
         <section class="tc w-100">
 
@@ -144,7 +146,7 @@ module.exports = (state, emit) => {
           </div>
 
           <p class="mt4 w-100 fl">
-            Made with ${heart()}<br>
+            made with ${heart()}<br>
             by ${link({ text: 'neko250', href: 'https://github.com/neko250', mod: 'ylw', ext: true })}
           </p>
 
