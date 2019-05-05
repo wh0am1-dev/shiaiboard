@@ -27,9 +27,7 @@ module.exports = (props = {}) => {
     <header class="tc w-100 dt ${props.class}">
       <section class="dtc v-mid">
         <h2 class="f3 f1-ns">
-          <span class="${props.mod} near-black ph3 pv2 shadow-5 br2">
-            ${props.text}
-          </span>
+          <span class="${props.mod} near-black ph3 pv2 shadow-5 br2">${props.text}</span>
         </h2>
       </section>
     </header>

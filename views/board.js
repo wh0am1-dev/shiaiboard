@@ -41,7 +41,7 @@ module.exports = (state, emit) => {
 
       </main>
 
-      <audio id="sfx-horn" class="dn" preload volume="1.0">i
+      <audio id="sfx-horn" class="dn" preload volume="1.0">
         <source src="/assets/sfx/horn.ogg" type="audio/ogg">
         <source src="/assets/sfx/horn.mp3" type="audio/mpeg">
       </audio>

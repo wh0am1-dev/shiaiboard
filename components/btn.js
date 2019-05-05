@@ -25,10 +25,8 @@ module.exports = (props = {}) => {
   }
 
   return html`
-    <span onclick=${onclick}
-      class="${props.mod} bg-animate pa1 ba br2 pointer ${props.class}">
-      ${props.text}
-    </span>
+    <span class="${props.mod} bg-animate pa1 ba br2 pointer ${props.class}"
+      onclick=${onclick}>${props.text}</span>
   `
 
   function onclick (ev) {
