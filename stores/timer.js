@@ -40,7 +40,7 @@ module.exports = (state, emitter) => {
       }
 
       emitter.emit(state.events.RENDER)
-    }, 1)
+    }, 10)
 
     state.time.on = true
     emitter.emit(state.events.RENDER)
