@@ -57,15 +57,6 @@ module.exports = (state, emit) => {
                 </td>
               </tr>
               <tr>
-                <td class="pr3 pv1 tr fw6 ttu">Reset timer</td>
-                <td class="pr3 pv1">
-                  <ul class="mv1 pl3">
-                    <li>long touch</li>
-                    <li>right click</li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
                 <td class="pr3 pv1 tr fw6 ttu">Add point</td>
                 <td class="pr3 pv1">
                   <ul class="mv1 pl3">
