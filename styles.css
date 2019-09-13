@@ -67,32 +67,30 @@
   backface-visibility: hidden;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  transition: -webkit-transform .15s ease-out;
-  transition: transform .15s ease-out;
-  transition: transform .15s ease-out, -webkit-transform .15s ease-out;
+  transition: transform 25ms ease-in-out, -webkit-transform 25ms ease-in-out;
 }
 
 .grow-sm:active {
-  -webkit-transform: scale(.90);
-  transform: scale(.90);
+  -webkit-transform: scale(.95);
+  transform: scale(.95);
 }
 
 .trans-in {
-  -webkit-transition: all .15s ease-in;
-  -moz-transition: all .15s ease-in;
-  transition: all .15s ease-in;
+  -webkit-transition: all 100ms ease-in;
+  -moz-transition: all 100ms ease-in;
+  transition: all 100ms ease-in;
 }
 
 .trans-out {
-  -webkit-transition: all .15s ease-out;
-  -moz-transition: all .15s ease-out;
-  transition: all .15s ease-out;
+  -webkit-transition: all 100ms ease-out;
+  -moz-transition: all 100ms ease-out;
+  transition: all 100ms ease-out;
 }
 
 .trans-in-out {
-  -webkit-transition: all .15s ease-in-out;
-  -moz-transition: all .15s ease-in-out;
-  transition: all .15s ease-in-out;
+  -webkit-transition: all 100ms ease-in-out;
+  -moz-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
 }
 
 .modal {
