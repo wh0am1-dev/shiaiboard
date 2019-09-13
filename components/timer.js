@@ -25,7 +25,7 @@ module.exports = (state, emit) => {
         class="${mod} f-subheadline f-8-m f-10-l fw6 lh-solid-l grow-sm">
         ${state.time.m()}:${state.time.s()}
         <span class="absolute">
-          <small class="f4 f3-m f2-l">.${state.time.cs()}</small>
+          <small class="f4 f3-m f2-l">.${state.time.ds()}</small>
         </span>
       </span>
     </section>

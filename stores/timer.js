@@ -19,6 +19,7 @@ module.exports = (state, emitter) => {
   state.time.on = state.time.on || false
   state.time.m = () => Math.floor(state.time.clk / 60000).toString().padStart(2, '0')
   state.time.s = () => Math.floor(state.time.clk % 60000 / 1000).toString().padStart(2, '0')
+  state.time.ds = () => Math.floor(state.time.clk % 1000 / 100).toString().padStart(1, '0')
   state.time.cs = () => Math.floor(state.time.clk % 1000 / 10).toString().padStart(2, '0')
   state.time.ms = () => Math.floor(state.time.clk % 1000).toString().padStart(3, '0')
 
@@ -40,7 +41,7 @@ module.exports = (state, emitter) => {
       }
 
       emitter.emit(state.events.RENDER)
-    }, 10)
+    }, 100)
 
     state.time.on = true
     emitter.emit(state.events.RENDER)
