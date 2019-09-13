@@ -12,10 +12,10 @@ module.exports = (state, emit) => {
     <header class="bg-near-black w-100 pv3 ph4 flex items-center bb b--dark-gray z-999 shadow-2">
 
       <nav class="f6 fw6 tracked w-100 flex items-center justify-between justify-center-ns">
-        ${btn({ text: 'HELP', mod: 'red', onclick: help, class: 'mr4 w3 tc' })}
+        ${btn({ text: 'HELP', mod: 'red', onclick: showHelp, class: 'mr4 w3 tc' })}
         <img src="/assets/img/shiai.svg"
-          class="h3 grow-sm shadow-2 pointer br-100" onclick=${about}>
-        ${btn({ text: 'RESET', mod: 'red', onclick: reset, class: 'ml4 w3 tc' })}
+          class="h3 grow-sm shadow-2 pointer br-100" onclick=${showAbout}>
+        ${btn({ text: 'RESET', mod: 'red', onclick: showReset, class: 'ml4 w3 tc' })}
       </nav>
 
       ${helpModal()}
@@ -24,17 +24,17 @@ module.exports = (state, emit) => {
     </header>
   `
 
-  function help (ev) {
+  function showHelp (ev) {
     emit(state.events.scroll.HIDE_MENU)
     emit(state.events.app.OPEN_MODAL, 'help')
   }
 
-  function reset (ev) {
+  function showReset (ev) {
     emit(state.events.scroll.HIDE_MENU)
     emit(state.events.app.OPEN_MODAL, 'reset')
   }
 
-  function about (ev) {
+  function showAbout (ev) {
     emit(state.events.scroll.HIDE_MENU)
     emit(state.events.app.OPEN_MODAL, 'about')
   }
@@ -146,6 +146,12 @@ module.exports = (state, emit) => {
           </div>
 
           <p class="mt4 w-100 fl">
+            <span class="bg-near-white near-black ph2 pv1 br2">
+              v1.2.1
+            </span>
+          </p>
+
+          <p class="w-100 fl">
             made with ${heart()}<br>
             by ${link({ text: 'neko250', href: 'https://github.com/neko250', mod: 'ylw', ext: true })}
           </p>

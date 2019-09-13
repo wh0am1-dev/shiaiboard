@@ -1,6 +1,6 @@
 {
   "name": "shiaiboard",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "tomiki aikido shiai scoreboard",
   "main": "index.js",
   "private": true,
