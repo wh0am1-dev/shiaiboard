@@ -21,7 +21,7 @@ module.exports = (state, emit) => {
 
   return html`
     <section class="h-25 flex items-center justify-center">
-      <span onclick=${toggle} oncontextmenu=${reset}
+      <span onclick=${toggle}
         class="${mod} f-subheadline f-8-m f-10-l fw6 lh-solid-l grow-sm">
         ${state.time.m()}:${state.time.s()}
         <span class="absolute">
@@ -33,9 +33,5 @@ module.exports = (state, emit) => {
 
   function toggle () {
     emit(state.events.timer.TOGGLE)
-  }
-
-  function reset () {
-    emit(state.events.timer.RESET)
   }
 }
