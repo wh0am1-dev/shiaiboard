@@ -91,7 +91,7 @@ module.exports = (state, emit) => {
           <div class="flex flex-wrap items-center justify-around">
             ${button({ text: 'TANTO', mod: 'red', onclick: tanto, class: 'mt4 mh2 w-100 w4-ns' })}
             ${button({ text: 'TOSHU', mod: 'red', onclick: toshu, class: 'mt4 mh2 w-100 w4-ns' })}
-            ${button({ text: 'FREE', mod: 'red', onclick: free, class: 'mt4 mh2 w-100 w4-ns' })}
+            ${button({ text: 'EMBU', mod: 'red', onclick: embu, class: 'mt4 mh2 w-100 w4-ns' })}
           </div>
         </section>
       `
@@ -107,8 +107,8 @@ module.exports = (state, emit) => {
       reset()
     }
 
-    function free (ev) {
-      emit(state.events.timer.TYPE, 'free')
+    function embu (ev) {
+      emit(state.events.timer.TYPE, 'embu')
       reset()
     }
 

@@ -12,7 +12,7 @@ module.exports = (state, emitter) => {
   state.time.types = {}
   state.time.types.tanto = 90000
   state.time.types.toshu = 180000
-  state.time.types.free = 120000
+  state.time.types.embu = 150000
   state.time.type = state.time.type || 'tanto'
   state.time.offset = state.time.offset || null
   state.time.clk = state.time.clk || 0
