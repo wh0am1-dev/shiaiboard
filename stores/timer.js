@@ -23,6 +23,12 @@ module.exports = (state, emitter) => {
   state.time.cs = () => Math.floor(state.time.clk % 1000 / 10).toString().padStart(2, '0')
   state.time.ms = () => Math.floor(state.time.clk % 1000).toString().padStart(3, '0')
 
+  state.time.total = () => {
+    let m = Math.floor(state.time.types[state.time.type] / 60000).toString().padStart(2, '0')
+    let s = Math.floor((state.time.types[state.time.type] % 60000) / 1000).toString().padStart(2, '0')
+    return `${m}:${s}`
+  }
+
   let interval = null
   if (!state.time.on) state.time.offset = null
 
