@@ -88,10 +88,10 @@ module.exports = (state, emit) => {
       content: html`
         <section class="tc w-100 mb3">
           <p>Select category</p>
-          <div class="flex flex-wrap items-center justify-around">
-            ${button({ text: 'TANTO', mod: 'red', onclick: tanto, class: 'mt4 mh2 w-100 w4-ns' })}
-            ${button({ text: 'TOSHU', mod: 'red', onclick: toshu, class: 'mt4 mh2 w-100 w4-ns' })}
-            ${button({ text: 'EMBU', mod: 'red', onclick: embu, class: 'mt4 mh2 w-100 w4-ns' })}
+          <div class="flex flex-column items-center justify-around">
+            ${button({ text: 'TANTO', mod: 'red', onclick: tanto, class: 'mt4 mh2 w-two-thirds' })}
+            ${button({ text: 'TOSHU', mod: 'red', onclick: toshu, class: 'mt4 mh2 w-two-thirds' })}
+            ${button({ text: 'EMBU', mod: 'red', onclick: embu, class: 'mt4 mh2 w-two-thirds' })}
           </div>
         </section>
       `
