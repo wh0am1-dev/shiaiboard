@@ -18,11 +18,15 @@ const mods = {
 
 module.exports = (state, emit) => {
   let mod = state.time.on ? mods.nil : 'silver'
+  let height = state.time.type === 'embu' ? 'h-100' : 'h-25'
+  let font = state.time.type === 'embu'
+    ? 'f-timer'
+    : 'f-subheadline f-8-m f-10-l'
 
   return html`
-    <section class="h-25 flex items-center justify-center">
+    <section class="flex items-center justify-center ${height}">
       <span onclick=${toggle} oncontextmenu=${reset}
-        class="${mod} f-subheadline f-8-m f-10-l fw6 lh-solid-l grow-sm">
+        class="${mod} ${font} fw6 lh-solid-l grow-sm">
         ${state.time.m()}:${state.time.s()}
         <span class="absolute">
           <small class="f4 f3-m f2-l">.${state.time.ds()}</small>
