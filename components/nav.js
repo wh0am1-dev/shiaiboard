@@ -138,7 +138,7 @@ module.exports = (state, emit) => {
 
           <p class="mt4 w-100 fl">
             <span class="bg-near-white near-black ph2 pv1 br2">
-              v1.2.2
+              v1.3.0
             </span>
           </p>
 
