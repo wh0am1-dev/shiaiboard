@@ -16,32 +16,31 @@
     "start": "bankai start index.js",
     "gen": "choo g",
     "pretty": "node pretty.js",
-    "build": "bankai build index.js --base /shiaiboard",
+    "build": "bankai build index.js --base .",
     "deploy": "gh-pages -d dist",
     "lint": "standard --verbose | snazzy",
     "deps": "dependency-check . && dependency-check . --extra --no-dev -i tachyons",
     "test": "npm run lint && npm run deps",
     "inspect": "bankai inspect index.js",
-    "update": "npm-check-updates -i",
-    "clean": "rm -r dist/"
+    "update": "npm-check-updates -i"
   },
   "dependencies": {
-    "choo": "^6.13.1",
+    "choo": "^7.1.0",
     "choo-persist": "^3.0.2",
-    "choo-service-worker": "^2.4.0",
-    "sheetify": "^7.3.3",
-    "tachyons": "^4.11.1",
-    "xtend": "^4.0.1"
+    "choo-service-worker": "^3.0.0",
+    "sheetify": "^8.0.0",
+    "tachyons": "^4.12.0",
+    "xtend": "^4.0.2"
   },
   "devDependencies": {
-    "bankai": "^9.15.0",
+    "bankai": "^9.15.3",
     "choo-cli": "^2.1.0",
-    "choo-devtools": "^2.5.1",
-    "dependency-check": "^3.3.0",
-    "gh-pages": "^2.0.1",
+    "choo-devtools": "^3.0.4",
+    "dependency-check": "^4.1.0",
+    "gh-pages": "^6.3.0",
     "npm-check-updates": "^18.0.2",
     "pretty": "^2.0.0",
-    "snazzy": "^8.0.0",
-    "standard": "^12.0.1"
+    "snazzy": "^9.0.0",
+    "standard": "^17.1.2"
   }
 }

@@ -30,6 +30,7 @@ app.use(require('./stores/timer'))
 app.use(require('./stores/players'))
 
 // ==== routes ====
+app.route('/', require('./views/board'))
 app.route('*', require('./views/board'))
 
 // ==== app ====
