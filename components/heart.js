@@ -1,29 +1,13 @@
-// heart component
-
 const html = require('choo/html')
 
-const mods = {
-  nil: 'near-white',
-  blu: 'blue',
-  grn: 'green',
-  ylw: 'yellow',
-  red: 'red',
-  ppl: 'light-purple',
-  pnk: 'pink',
-  lblu: 'light-blue',
-  lgrn: 'light-green',
-  lylw: 'light-yellow',
-  lred: 'light-red'
-}
+const heart = () => html`
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 512 512"
+    class="red w1 grow"
+  >
+    <path fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+  </svg>
+`
 
-module.exports = (props = {}) => {
-  props = {
-    mod: mods[props.mod] || mods.red
-  }
-
-  return html`
-    <svg class="${props.mod} w1 grow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-      <path fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path>
-    </svg>
-  `
-}
+module.exports = heart

@@ -1,6 +1,4 @@
-// debug plugin
-
-module.exports = (state, emitter, app) => {
+const debug = (state, emitter, app) => {
   // events
   state.events.DEBUG_ON = 'debug:on'
   state.events.DEBUG_OFF = 'debug:off'
@@ -51,3 +49,5 @@ module.exports = (state, emitter, app) => {
     emitter.emit(state.events.RENDER)
   })
 }
+
+module.exports = debug

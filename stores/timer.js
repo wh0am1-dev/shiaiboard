@@ -1,12 +1,9 @@
-// timer store
-
-module.exports = (state, emitter) => {
+const timer = (state, emitter) => {
   state.events.timer = {}
   state.events.timer.ON = 'timer:on'
   state.events.timer.OFF = 'timer:off'
   state.events.timer.TOGGLE = 'timer:toggle'
   state.events.timer.RESET = 'timer:reset'
-  state.events.timer.TYPE = 'timer:type'
 
   state.time = state.time || {}
   state.time.types = {}
@@ -47,7 +44,7 @@ module.exports = (state, emitter) => {
       }
 
       emitter.emit(state.events.RENDER)
-    }, 100)
+    }, 10)
 
     state.time.on = true
     emitter.emit(state.events.RENDER)
@@ -69,16 +66,15 @@ module.exports = (state, emitter) => {
     }
   })
 
-  emitter.on(state.events.timer.RESET, force => {
-    if (force || !state.time.on) {
+  emitter.on(state.events.timer.RESET, type => {
+    if (type || !state.time.on) {
       state.time.clk = 0
+      state.time.type = type || state.time.type
       emitter.emit(state.events.timer.OFF)
     }
   })
 
-  emitter.on(state.events.timer.TYPE, type => {
-    state.time.type = type
-  })
-
   if (state.time.on) emitter.emit(state.events.timer.ON)
 }
+
+module.exports = timer

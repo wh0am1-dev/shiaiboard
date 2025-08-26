@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/neko250/shiaiboard/master/assets/img/shiai.png" width="25%">
+<img src="https://raw.githubusercontent.com/wh0am1-dev/shiaiboard/master/assets/img/shiai.png" width="25%">
 
 # shiai board
 

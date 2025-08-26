@@ -2,12 +2,12 @@
   "name": "Shiai Board",
   "short_name": "Shiai",
   "description": "Tomiki Aikido shiai scoreboard",
-  "start_url": "/",
+  "start_url": ".",
   "display": "standalone",
   "background_color": "#111",
   "theme_color": "#111",
   "icons": [{
-    "src": "/assets/img/shiai.png",
+    "src": "assets/img/shiai.png",
     "type": "image/png",
     "sizes": "512x512"
   }]

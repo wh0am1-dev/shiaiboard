@@ -2,16 +2,16 @@
 
 var VERSION = require('./package.json').version
 var URLS = [
-  '/',
+  '.',
   ...process.env.STYLE_LIST,
   ...process.env.SCRIPT_LIST,
   ...process.env.MANIFEST_LIST,
-  '/assets/img/itaf.png',
-  '/assets/img/shiai.png',
-  '/assets/img/shiai.svg',
-  '/assets/img/tas.png',
-  '/assets/sfx/horn.mp3',
-  '/assets/sfx/horn.ogg',
+  'assets/img/itaf.png',
+  'assets/img/shiai.png',
+  'assets/img/shiai.svg',
+  'assets/img/tas.png',
+  'assets/sfx/horn.mp3',
+  'assets/sfx/horn.ogg',
 ]
 
 // Respond with cached resources

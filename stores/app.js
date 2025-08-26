@@ -1,6 +1,4 @@
-// app store
-
-module.exports = (state, emitter) => {
+const app = (state, emitter) => {
   state.events.app = {}
   state.events.app.ERROR = 'app:error'
   state.events.app.OPEN_MODAL = 'app:openmodal'
@@ -15,18 +13,12 @@ module.exports = (state, emitter) => {
 
   state.app = {}
   state.app.sfx = {}
-  state.app.routes = {}
-  state.app.routes.BOARD = '/'
-  state.app.routes.ERROR = 'error'
   state.app.modal = ''
-
-  emitter.on(state.events.app.ERROR, () => {
-    emitter.emit(state.events.REPLACESTATE, '/#error')
-  })
 
   emitter.on(state.events.app.OPEN_MODAL, id => {
     state.app.modal = id
     emitter.emit(state.events.RENDER)
+    emitter.emit(state.events.scroll.HIDE_MENU)
   })
 
   emitter.on(state.events.app.CLOSE_MODAL, () => {
@@ -56,3 +48,5 @@ module.exports = (state, emitter) => {
     emitter.emit(state.events.scroll.HIDE_MENU)
   })
 }
+
+module.exports = app

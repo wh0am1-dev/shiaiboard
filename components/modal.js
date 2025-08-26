@@ -1,44 +1,37 @@
-// modal component
-
 const html = require('choo/html')
 
-const mods = {
-  nil: 'near-white',
-  blu: 'blue',
-  grn: 'green',
-  ylw: 'yellow',
-  red: 'red',
-  ppl: 'light-purple',
-  pnk: 'pink',
-  lblu: 'light-blue',
-  lgrn: 'light-green',
-  lylw: 'light-yellow',
-  lred: 'light-red'
-}
-
-module.exports = (state, emit, props = {}) => {
-  props = {
-    id: props.id || state.fn.uuid(),
-    title: props.title || 'modal',
-    mod: mods[props.mod] || mods.nil,
-    content: props.content || ''
-  }
-
-  let id = `modal-${props.id}`
-  let show = state.app.modal === props.id ? '' : 'o-0 pe-none'
+const modal = (state, emit, {
+  id = state.fn.uuid(),
+  title = 'modal',
+  content = ''
+}) => {
+  if (state.app.modal !== id) return null
 
   return html`
-    <section id=${id} onclick=${close}
-      class="fixed absolute--fill bg-black-90 z-9999 trans-in ${show}">
-      <div onclick=${state.fn.stopProp}
-        class="absolute modal bg-near-black br2 ba b--dark-gray shadow-2 pa2 w-90 w-two-thirds-m w-third-l">
+    <section
+      id=${id}
+      onclick=${close}
+      class="fixed absolute--fill bg-black-90 z-9999 trans-in"
+    >
+      <div
+        onclick=${state.fn.stopProp}
+        class="absolute modal bg-near-black br2 ba bw1 b--dark-gray shadow-2 pa2 pa3-l"
+      >
         <div class="w-100 flex justify-between">
-          <span class="${props.mod} tl pv1 ph2">${props.title}</span>
-          <span class="tc red hover-near-white hover-bg-red bg-animate br2 pv1 ph3 pointer"
-            onclick=${close}>x</span>
+          <span class="near-white tl pv1 ph2">
+            ${title}
+          </span>
+          <span
+            onclick=${close}
+            class="tc red hover-near-white hover-bg-red bg-animate br2 pv1 ph2 pointer"
+          >
+            🞫
+          </span>
         </div>
 
-        <div class="ma2">${props.content}</div>
+        <div class="ma2">
+          ${content}
+        </div>
       </div>
     </section>
   `
@@ -48,3 +41,5 @@ module.exports = (state, emit, props = {}) => {
     ev.stopPropagation()
   }
 }
+
+module.exports = modal

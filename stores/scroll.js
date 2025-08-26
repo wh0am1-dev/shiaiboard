@@ -1,12 +1,8 @@
-// scroll store
-
-module.exports = (state, emitter) => {
+const scroll = (state, emitter) => {
   state.events.scroll = {}
   state.events.scroll.XY = 'scroll:xy'
   state.events.scroll.EL = 'scroll:el'
   state.events.scroll.HIDE_MENU = 'scroll:hidemenu'
-
-  // emitter.on(state.events.NAVIGATE, () => window.scrollTo(0, 0))
 
   emitter.on(state.events.scroll.XY, (x, y, smooth = false) => {
     window.scrollTo({
@@ -27,3 +23,5 @@ module.exports = (state, emitter) => {
     emitter.emit(state.events.scroll.XY, 0, 97, true)
   })
 }
+
+module.exports = scroll

@@ -1,8 +1,6 @@
-// players store
-
 const points = { ippon: 4, waza: 2, yuko: 1, tsuki: 1, shido: 0.5, chui: 1 }
 
-module.exports = (state, emitter) => {
+const players = (state, emitter) => {
   state.events.players = {}
   state.events.players.ADD = 'players:add'
   state.events.players.SUB = 'players:sub'
@@ -25,20 +23,24 @@ module.exports = (state, emitter) => {
   emitter.on(state.events.players.RESET, reset)
 
   function reset () {
-    state.players = {}
-    state.players.aka = player('aka', 'red')
-    state.players.shiro = player('shiro', 'nil')
-    emitter.emit(state.events.RENDER)
-  }
-
-  function player (name, mod) {
-    return {
-      name: name || 'player',
-      mod: mod || 'nil',
-      points: 0,
-      ippon: 0, waza: 0, yuko: 0,
-      tsuki: 0, shido: 0, chui: 0
+    state.players = {
+      aka: {
+        name: 'aka',
+        points: 0,
+        ippon: 0, waza: 0,
+        yuko: 0, tsuki: 0,
+        shido: 0, chui: 0
+      },
+      shiro: {
+        name: 'shiro',
+        points: 0,
+        ippon: 0, waza: 0,
+        yuko: 0, tsuki: 0,
+        shido: 0, chui: 0
+      }
     }
+
+    emitter.emit(state.events.RENDER)
   }
 
   function calcPoints () {
@@ -59,3 +61,5 @@ module.exports = (state, emitter) => {
       points.chui * state.players.aka.chui
   }
 }
+
+module.exports = players
